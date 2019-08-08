@@ -48,6 +48,7 @@ PYBIND11_MODULE(_torch_tvm, m) {
   RegisterPass pass([](std::shared_ptr<Graph>& g) {
     if (fusion_enabled) {
       FuseLinear(g);
+      FuseConcat(g);
       FuseSupportedOps(g);
     }
   });

@@ -320,7 +320,7 @@ void TVMCompiler::run(Stack& stack) {
       value_to_ivalue[value] = optional_ivalue.value();
     }
     auto ivalue = value_to_ivalue.at(cache_[spec].input_values[i]);
-    auto tensor = ivalue.toTensor().to(at::kFloat);
+    auto tensor = ivalue.toTensor();
     auto dl_tensor = at::toDLPack(tensor);
     cache_[spec].set_input(i, tvm::runtime::NDArray::FromDLPack(dl_tensor));
   }
