@@ -7,6 +7,7 @@
 
 #include "compiler.h"
 #include "fuse_linear.h"
+#include "fuse_concat.h"
 #include "fusion_pass.h"
 
 namespace py = pybind11;
